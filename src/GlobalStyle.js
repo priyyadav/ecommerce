@@ -24,6 +24,7 @@ body {
    scrollbar-color: rgb(98 84 243);
     scrollbar-width: thin;
     background: #191919;
+    color: #dcdce7c4;
 }
 
 body::-webkit-scrollbar {

@@ -1,8 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import HeroSection from "../components/HeroSection";
+import Services from "../components/Services";
+import Trusted from "../components/Trusted";
 
 const Home = () => {
-  return <Wrapper className="test">Home</Wrapper>;
+  return <Wrapper className="test">
+    <HeroSection name="SmartBuys"></HeroSection>
+    <Services></Services>
+    <Trusted></Trusted>
+  </Wrapper>;
 };
 
 const Wrapper = styled.section`

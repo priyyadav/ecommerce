@@ -14,6 +14,7 @@ const Nav = () => {
       display: flex;
       gap: 4.8rem;
       align-items: center;
+     
 
       .navbar-link {
         &:link,
