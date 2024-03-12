@@ -13,7 +13,7 @@ import Header from './components/Header';
 function App() {
   const theme={
     colors: {
-      heading: "rgb(24 24 29)",
+      heading: "#dcdce7c4",
       text: "#dcdce7c4",
       white: "#fff",
       black: "#212529",
