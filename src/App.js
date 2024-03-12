@@ -50,7 +50,7 @@ function App() {
       <Route path='/cart' element={<Cart></Cart>}/>
       <Route path='*' element={<Error></Error>}/>
     </Routes>
-    <Footer></Footer>
+    {/* <Footer></Footer> */}
    </Router>
    </ThemeProvider>
   );
