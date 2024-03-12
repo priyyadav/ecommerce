@@ -10,6 +10,7 @@ import Error from './pages/Error';
 import { GlobalStyle } from './GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import Header from './components/Header';
+import Footer from './components/Footer';
 function App() {
   const theme={
     colors: {
@@ -49,6 +50,7 @@ function App() {
       <Route path='/cart' element={<Cart></Cart>}/>
       <Route path='*' element={<Error></Error>}/>
     </Routes>
+    <Footer></Footer>
    </Router>
    </ThemeProvider>
   );
