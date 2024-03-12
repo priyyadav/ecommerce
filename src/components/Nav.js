@@ -5,7 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 
 const Nav = () => {
-  const [menuIcon, setMenuIcon] = useState();
+  const [menuIcon, setMenuIcon] = useState(false);
 
 
 
@@ -86,6 +86,7 @@ const Nav = () => {
       .mobile-navbar-btn {
         display: inline-block;
         z-index: 9999;
+        
         border: ${({ theme }) => theme.colors.black};
 
         .mobile-nav-icon {
@@ -114,7 +115,7 @@ const Nav = () => {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #fff;
+        background-color: black;
 
         display: flex;
         justify-content: center;
