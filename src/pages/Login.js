@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { onSnapshot, query, where } from "firebase/firestore";
 import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { auth, fireDB } from "../firebase/firebaseConfig";
+import "./Login.css"; // Import the CSS file
 
 const Login = () => {
   const [isSignUpForm, setIsSignUpForm] = useState(true);
@@ -71,15 +71,8 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, userLogin.email, userLogin.password);
+      await signInWithEmailAndPassword(auth, userLogin.email, userLogin.password);
       setLoading(false);
-      const displayName = userCredential.user.displayName;
-      const userData = {
-        email: userLogin.email,
-        name: displayName,
-        
-      };
-      localStorage.setItem("user", JSON.stringify(userData));
       navigate('/');
     } catch (error) {
       console.error("Error signing in:", error.message);
@@ -96,9 +89,9 @@ const Login = () => {
     <div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="form-container"
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="form-title">
           {isSignUpForm ? "Sign Up" : "Sign In"}
         </h1>
 
@@ -108,7 +101,7 @@ const Login = () => {
             onChange={(e) => setUserSignup({ ...userSignup, name: e.target.value })}
             type="text"
             placeholder="Full Name"
-            className="p-4 my-4 w-full bg-gray-700"
+            className="form-input"
           />
         )}
 
@@ -120,7 +113,7 @@ const Login = () => {
           }}
           type="text"
           placeholder="Email Address"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="form-input"
         />
 
         <input
@@ -131,20 +124,20 @@ const Login = () => {
           }}
           type="password"
           placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="form-input"
         />
 
-        <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
+        <p className="error-message">{errorMessage}</p>
 
         <button
-          className="p-4 my-6 bg-red-700 w-full rounded-lg"
+          className="submit-button"
           onClick={isSignUpForm ? userSignupFunction : userLoginFunction}
         >
           {!isSignUpForm ? "Sign In" : "Sign Up"}
         </button>
 
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignUpForm
+        <p className="signup-link" onClick={toggleSignInForm}>
+          {!isSignUpForm
             ? "New to smartBuyer? Sign Up Now"
             : "Already registered? Sign In Now."}
         </p>

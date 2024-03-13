@@ -2,10 +2,7 @@ import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/cartReducer";
 
 const CartContext = createContext();
-let getusename = localStorage.getItem("user");
-let gg=getusename.name;
-console.log(getusename,"use")
-console.log(gg,"use")
+
 
 const getLocalCartData = () => {
     let localCartData = localStorage.getItem("thapaCart");
@@ -21,9 +18,9 @@ cart:getLocalCartData().cart,
   total_item: getLocalCartData().cart.total_item|| " ",
   total_price: getLocalCartData().cart.total_price|| " ",
   shipping_fee: 50000,
-  username: getusename
+ 
 };
-console.log(initialState,"i")
+
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
