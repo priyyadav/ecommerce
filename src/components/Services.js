@@ -101,8 +101,8 @@ const Wrapper = styled.section`
     height: 8rem;
     padding: 2rem;
     border-radius: 50%;
-    background-color: #fff;
-    color: #5138ee;
+    background-color: #000;
+    color: #d06d11;
   }
 `;
 export default Services;

@@ -41,11 +41,9 @@ const Footer = () => {
                   <FaInstagram className="icons" />
                 </div>
                 <div>
-                  <a
-                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank">
+                  
                     <FaYoutube className="icons" />
-                  </a>
+                
                 </div>
               </div>
             </div>
@@ -99,15 +97,17 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: space-between;
   }
+  
   footer {
     padding: 14rem 0 9rem 0;
     background-color: ${({ theme }) => theme.colors.footer_bg};
+    color: #dcdce7c4;
     h3 {
-      color: ${({ theme }) => theme.colors.hr};
+      color: #dcdce7c4;
       margin-bottom: 2.4rem;
     }
     p {
-      color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.whites};
     }
     .footer-social--icons {
       display: flex;
@@ -116,10 +116,10 @@ const Wrapper = styled.section`
       div {
         padding: 1rem;
         border-radius: 50%;
-        border: 2px solid ${({ theme }) => theme.colors.white};
+        border: 2px solid ${({ theme }) => theme.colors.whites};
 
         .icons {
-          color: ${({ theme }) => theme.colors.white};
+          color: ${({ theme }) => theme.colors.whites};
           font-size: 2.4rem;
           position: relative;
           cursor: pointer;

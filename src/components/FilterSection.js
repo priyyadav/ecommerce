@@ -58,6 +58,7 @@ const FilterSection = () => {
                 key={index}
                 type="button"
                 name="category"
+                style={{padding:"2px 8px"}}
                 value={curElem}
                 className={curElem === category ? "active" : ""}
                 onClick={updateFilterValue}>
@@ -76,6 +77,7 @@ const FilterSection = () => {
             name="company"
             id="company"
             className="filter-company--select"
+            style={{color:"black"}}
             onClick={updateFilterValue}>
             {companyData.map((curElem, index) => {
               return (
@@ -229,7 +231,7 @@ const Wrapper = styled.section`
 
   .checkStyle {
     font-size: 1rem;
-    color: #fff;
+    color: #000;
   }
 
   .filter_price {

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import FilterSection from "../components/FilterSection";
 import ProductList from "../components/ProductList";
 import Sort from "../components/Sort";
+import Footer from "../components/Footer";
 
 
 const Products = () => {
@@ -21,6 +22,7 @@ const Products = () => {
           </div>
         </section>
       </div>
+      <Footer></Footer>
     </Wrapper>
   );
 };

@@ -10,6 +10,7 @@ import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "../components/Star";
 import AddToCart from "../components/AddToCart";
+import Footer from "../components/Footer";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -104,6 +105,7 @@ const SingleProduct = () => {
           </div>
         </div>
       </Container>
+      <Footer></Footer>
     </Wrapper>
   );
 };

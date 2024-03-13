@@ -1,11 +1,21 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context/productContext'
+import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
+
 
 const About = () => {
  
-  return (
-    <div>hello</div>
-  )
-}
 
-export default About
+  const data = {
+    name: "SmartBuyers Ecommerce",
+  };
+
+  return (
+    <>
+      
+      <HeroSection myData={data} />
+      <Footer></Footer>
+    </>
+  );
+};
+
+export default About;

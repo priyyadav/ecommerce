@@ -4,8 +4,13 @@ import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
+import { useCartContext } from "../context/cartContext";
+import { addDoc, collection } from "firebase/firestore";
+import { fireDB as db } from "../firebase/firebaseConfig";
 
 const AddToCart = ({ product }) => {
+  const { addToCart } = useCartContext();
+
   const { id, colors, stock } = product;
 
   const [color, setColor] = useState(colors[0]);
@@ -17,6 +22,22 @@ const AddToCart = ({ product }) => {
 
   const setIncrease = () => {
     amount < stock ? setAmount(amount + 1) : setAmount(stock);
+  };
+
+  const addToCartAndOrder = async () => {
+    await addToCart(id, color, amount, product); // Add item to cart
+    await addOrderToFirestore({ productId: id, productName: product.name, productColor: color, productPrice: product.price, quantity: amount }); // Add item to order database
+  };
+
+  const addOrderToFirestore = async (orderData) => {
+    try {
+      const ordersCollection = collection(db, "orders");
+      await addDoc(ordersCollection, orderData);
+      console.log("Order added to Firestore");
+    } catch (error) {
+      console.error("Error adding order to Firestore: ", error);
+      throw new Error("Failed to add order to Firestore");
+    }
   };
 
   return (
@@ -45,7 +66,7 @@ const AddToCart = ({ product }) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart">
+      <NavLink to="/cart" onClick={addToCartAndOrder}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>

@@ -21,7 +21,7 @@ html {
 
 body {
   overflow-x: hidden;
-   scrollbar-color: rgb(98 84 243);
+   scrollbar-color: #d06d11;
     scrollbar-width: thin;
     background: #191919;
     color: #dcdce7c4;
@@ -125,7 +125,7 @@ ${"" /* resuable code section  */}
      .intro-data {
       margin-bottom: 0;
       text-transform: uppercase;
-      color: #5138ee;
+      color: #d06d11;
     }
 
    .caption {

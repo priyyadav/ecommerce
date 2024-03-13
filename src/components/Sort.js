@@ -66,6 +66,7 @@ const Wrapper = styled.section`
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      background-color: #d06d11
     }
 
     .icon {
@@ -73,7 +74,7 @@ const Wrapper = styled.section`
     }
     .active {
       background-color: ${({ theme }) => theme.colors.black};
-      color: #fff;
+      color: #000;
     }
   }
 

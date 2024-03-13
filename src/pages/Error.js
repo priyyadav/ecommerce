@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+import Footer from "../components/Footer";
 
 const ErrorPage = () => {
   return (
@@ -20,6 +21,7 @@ const ErrorPage = () => {
           </NavLink>
         </div>
       </div>
+      <Footer></Footer>
     </Wrapper>
   );
 };
