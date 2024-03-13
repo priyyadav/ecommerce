@@ -33,7 +33,7 @@ const AddToCart = ({ product }) => {
     try {
       const ordersCollection = collection(db, "orders");
       await addDoc(ordersCollection, orderData);
-      console.log("Order added to Firestore");
+   
     } catch (error) {
       console.error("Error adding order to Firestore: ", error);
       throw new Error("Failed to add order to Firestore");
